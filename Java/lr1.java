@@ -106,12 +106,13 @@ public class Main {
                     x = Integer.parseInt(scanner.next());
                     System.out.println("Введіть у: ");
                     y = Integer.parseInt(scanner.next());
-
+                    if((Math.sin(x) + x * y - 2 * x + y) == 0)
+                        throw new Exception("Знаменник не може бути рівним нулю");
 
                     double res = ((x * y + 2 * x - java.lang.Math.pow(y, x)) / (Math.sin(x) + x * y - 2 * x + y));
                     System.out.println("A = " + res);
-                }catch(java.lang.NumberFormatException e){
-                    System.out.println("Введено не число");
+                }catch(Exception ex){
+                    ex.printStackTrace();
                 }
 
                 break;
